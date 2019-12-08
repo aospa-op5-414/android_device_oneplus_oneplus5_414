@@ -31,6 +31,10 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+SOONG_CONFIG_NAMESPACES += gralloc
+SOONG_CONFIG_gralloc := use_v1
+SOONG_CONFIG_gralloc_use_v1 := true
+
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
