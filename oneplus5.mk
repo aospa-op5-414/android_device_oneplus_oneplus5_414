@@ -3,6 +3,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 $(call inherit-product, vendor/oneplus/oneplus5/oneplus5-vendor.mk)
 
 # AID/fs configs
