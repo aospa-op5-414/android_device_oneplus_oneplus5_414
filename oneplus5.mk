@@ -148,7 +148,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Kernel
-TARGET_KERNEL_VERSION := 4.4
+TARGET_KERNEL_VERSION := 4.14
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
