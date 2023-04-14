@@ -113,7 +113,7 @@ echo "0:1036800 4:1056000" > /sys/module/cpu_boost/parameters/input_boost_freq
 echo 450 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 # Enable bus-dcvs
-for cpubw in /sys/devices/soc/*qcom,cpubw*/devfreq/*qcom,cpubw*
+for cpubw in /sys/devices/platform/soc/*qcom,cpubw*/devfreq/*qcom,cpubw*
 do
 echo "bw_hwmon" > $cpubw/governor
 echo 50 > $cpubw/polling_interval
@@ -128,14 +128,14 @@ echo 250 > $cpubw/bw_hwmon/up_scale
 echo 1600 > $cpubw/bw_hwmon/idle_mbps
 done
 
-for memlat in /sys/devices/soc/*qcom,memlat-cpu*/devfreq/*qcom,memlat-cpu*
+for memlat in /sys/devices/platform/soc/*qcom,memlat-cpu*/devfreq/*qcom,memlat-cpu*
 do
 echo "mem_latency" > $memlat/governor
 echo 10 > $memlat/polling_interval
 echo 400 > $memlat/mem_latency/ratio_ceil
 done
 
-echo "cpufreq" > /sys/devices/soc/soc:qcom,mincpubw/devfreq/soc:qcom,mincpubw/governor
+echo "cpufreq" > /sys/devices/platform/soc/soc:qcom,mincpubw/devfreq/soc:qcom,mincpubw/governor
 
 if [ -f /sys/devices/soc0/soc_id ]; then
 soc_id=`cat /sys/devices/soc0/soc_id`
